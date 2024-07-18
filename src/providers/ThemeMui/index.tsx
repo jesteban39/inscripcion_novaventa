@@ -7,7 +7,9 @@ import {themeOptions} from './themeOptions'
 
 const theme = createTheme(themeOptions)
 
-export default function ThemeMiuProvider({children}: Readonly<{children: React.ReactNode}>) {
+export default function ThemeMiuProvider({
+  children
+}: Readonly<{children: React.ReactNode}>) {
   return (
     <NextAppDirEmotionCacheProvider options={{key: 'mui'}}>
       <ThemeProvider theme={theme}>

@@ -1,13 +1,23 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Serverless directories
+.serverless
+
 # dependencies
 /node_modules
+jspm_packages
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+pnpm-lock.yaml
+package-lock.json
+
+# IDE
+#.vscode
 
 # testing
 /coverage
+.swc/
 
 # next.js
 /.next/
@@ -22,11 +32,12 @@
 
 # debug
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
+.env.*
 
 # vercel
 .vercel
@@ -34,3 +45,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# amplify
+node_modules
+.amplify
+amplify_outputs*
+amplifyconfiguration*
