@@ -1,27 +1,27 @@
-import type {ThemeOptions} from '@mui/material/styles';
-import {Roboto, Inter} from 'next/font/google';
+import type {ThemeOptions} from '@mui/material/styles'
+import {Roboto, Inter} from 'next/font/google'
 
 declare module '@mui/material/styles/createPalette' {
   interface PaletteOptions {
     miColor?: {
-      main: string;
-    };
+      main: string
+    }
   }
 }
 
 declare module '@mui/material/Typography/Typography' {
   interface TypographyPropsVariantOverrides {
-    title1: true;
-    alert1: true;
-    alert2: true;
-    label: true;
-    rule: true;
+    title1: true
+    alert1: true
+    alert2: true
+    label: true
+    rule: true
   }
 }
 
 declare module '@mui/material/Button/Button' {
   interface ButtonPropsVariantOverrides {
-    file: true;
+    file: true
   }
 }
 
@@ -29,9 +29,9 @@ const roboto = Roboto({
   weight: ['500', '100', '700', '300'],
   style: ['normal', 'italic'],
   subsets: ['latin']
-});
+})
 
-const fontInter = Inter({subsets: ['latin']});
+const fontInter = Inter({subsets: ['latin']})
 
 export const themeOptions: ThemeOptions = {
   palette: {
@@ -177,4 +177,4 @@ export const themeOptions: ThemeOptions = {
       // }
     }
   }
-};
+}
