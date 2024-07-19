@@ -1,9 +1,9 @@
-import Typography from '@mui/material/Typography'
+import {NavBar} from '@/components/NovBar'
 
 export default function Home() {
   return (
     <main>
-      <Typography color='primary'>Inscipcíon Novaventa</Typography>
+      <NavBar />
     </main>
   )
 }

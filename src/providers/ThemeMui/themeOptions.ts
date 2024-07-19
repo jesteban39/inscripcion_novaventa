@@ -36,7 +36,7 @@ const fontInter = Inter({subsets: ['latin']})
 export const themeOptions: ThemeOptions = {
   palette: {
     primary: {
-      main: 'rgba(33, 83, 50, 1)'
+      main: 'rgba(22, 139, 160, 1)'
     },
     secondary: {
       main: 'rgba(71, 187, 59, 1)'
@@ -135,6 +135,15 @@ export const themeOptions: ThemeOptions = {
       defaultProps: {
         variant: 'standard',
         fullWidth: true
+      }
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: () => ({
+          borderBottomLeftRadius: 12,
+          borderBottomRightRadius: 12,
+          padding: '1vw 20vw'
+        })
       }
     },
     MuiInputLabel: {
