@@ -1,9 +1,35 @@
 {
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.autoSave": "onFocusChange",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
     "cSpell.words": [
-        "inscripcion",
+        "dotenv",
+        "jetpack",
+        "Roboto",
+        "signin",
+        "testid",
+        "toastify",
+        "Novaempresarios",
         "Novaventa",
         "Parens",
-        "Roboto",
-        "testid"
+    ],
+    "cSpell.enableFiletypes": [
+        "!json",
+        "!jsonc",
+        "!jsonl",
+        "!yaml",
+        "!yml"
     ]
 }

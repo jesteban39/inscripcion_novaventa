@@ -1,7 +1,7 @@
-'use client'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import Image from 'next/image'
+'use client';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Image from 'next/image';
 
 export function NavBar() {
   return (
@@ -10,5 +10,5 @@ export function NavBar() {
         <Image src='/icons/novaventa.svg' alt='novaventa' fill />
       </Toolbar>
     </AppBar>
-  )
+  );
 }

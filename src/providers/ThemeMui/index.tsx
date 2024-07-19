@@ -1,11 +1,11 @@
-'use client'
-import React from 'react'
-import CssBaseline from '@mui/material/CssBaseline'
-import {createTheme, ThemeProvider} from '@mui/material/styles'
-import {NextAppDirEmotionCacheProvider} from './EmotionCache'
-import {themeOptions} from './themeOptions'
+'use client';
+import React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
+import {NextAppDirEmotionCacheProvider} from './EmotionCache';
+import {themeOptions} from './themeOptions';
 
-const theme = createTheme(themeOptions)
+const theme = createTheme(themeOptions);
 
 export default function ThemeMiuProvider({
   children
@@ -17,5 +17,5 @@ export default function ThemeMiuProvider({
         {children}
       </ThemeProvider>
     </NextAppDirEmotionCacheProvider>
-  )
+  );
 }

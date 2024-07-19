@@ -1,9 +1,9 @@
-import {NavBar} from '@/components/NovBar'
+import {NavBar} from '@/components/NovBar';
 
-export default function Home() {
+export default function PageHome() {
   return (
     <main>
       <NavBar />
     </main>
-  )
+  );
 }
