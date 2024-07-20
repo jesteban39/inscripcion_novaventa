@@ -1,9 +1,9 @@
 'use client'
-import React from 'react'
+import {NextAppDirEmotionCacheProvider} from '@/providers/ThemeMui/EmotionCache'
+import {themeOptions} from '@/providers/ThemeMui/themeOptions'
 import CssBaseline from '@mui/material/CssBaseline'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
-import {NextAppDirEmotionCacheProvider} from './EmotionCache'
-import {themeOptions} from './themeOptions'
+import React from 'react'
 
 const theme = createTheme(themeOptions)
 

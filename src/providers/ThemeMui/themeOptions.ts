@@ -25,7 +25,7 @@ declare module '@mui/material/Button/Button' {
   }
 }
 
-const roboto = Roboto({
+const fontRoboto = Roboto({
   weight: ['500', '100', '700', '300'],
   style: ['normal', 'italic'],
   subsets: ['latin']
@@ -53,7 +53,7 @@ export const themeOptions: ThemeOptions = {
   },
   typography: {
     fontSize: 15,
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: fontRoboto.style.fontFamily,
     subtitle1: {fontSize: '23px', fontWeight: 500},
     subtitle2: {fontSize: '16px', fontWeight: 400}
   },
@@ -140,9 +140,8 @@ export const themeOptions: ThemeOptions = {
     MuiAppBar: {
       styleOverrides: {
         root: () => ({
-          borderBottomLeftRadius: 12,
-          borderBottomRightRadius: 12,
-          padding: '3vw 20vw'
+          borderRadius: '0px 0px 1rem 1rem',
+          padding: '2vw 20vw'
         })
       }
     },

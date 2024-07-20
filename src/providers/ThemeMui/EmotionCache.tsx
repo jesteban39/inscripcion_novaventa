@@ -3,12 +3,10 @@ import React from 'react'
 import createCache from '@emotion/cache'
 import {useServerInsertedHTML} from 'next/navigation'
 import {CacheProvider as DefaultCacheProvider} from '@emotion/react'
-import type {EmotionCache, Options as OptionsOfCreateCache} from '@emotion/cache'
+import type {EmotionCache, Options} from '@emotion/cache'
 
 type CacheProviderProps = {
-  /** This is the options passed to createCache() from 'import createCache from "@emotion/cache"' */
-  options: Omit<OptionsOfCreateCache, 'insertionPoint'>
-  /** By default <CacheProvider /> from 'import { CacheProvider } from "@emotion/react"' */
+  options: Omit<Options, 'insertionPoint'>
   CacheProvider?: (props: {
     value: EmotionCache
     children: React.ReactNode
@@ -46,13 +44,11 @@ export function NextAppDirEmotionCacheProvider(props: CacheProviderProps) {
       <style
         key={cache.key}
         data-emotion={`${cache.key} ${names.join(' ')}`}
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
           __html: names.reduce((styles, name) => styles + cache.inserted[name], '')
         }}
       />
     )
   })
-
   return <CacheProvider value={cache}>{children}</CacheProvider>
 }
