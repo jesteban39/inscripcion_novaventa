@@ -49,6 +49,9 @@ export const themeOptions: ThemeOptions = {
     },
     error: {
       main: 'rgba(244, 54, 76, 1)'
+    },
+    background: {
+      paper: 'rgba(238,238,238,1)'
     }
   },
   typography: {
@@ -141,7 +144,15 @@ export const themeOptions: ThemeOptions = {
       styleOverrides: {
         root: () => ({
           borderRadius: '0px 0px 1rem 1rem',
-          padding: '2vw 20vw'
+          paddingTop: 6
+        })
+      }
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: () => ({
+          boxShadow: 'none',
+          borderRadius: 0
         })
       }
     },

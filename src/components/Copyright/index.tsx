@@ -6,9 +6,9 @@ export function Copyright() {
   return (
     <Box
       sx={{
-        py: 2,
-        mx: 1,
-        mt: 'auto'
+        p: 1,
+        mt: 'auto',
+        height: '6vh'
       }}
     >
       <Typography variant='body2' color='text.secondary'>

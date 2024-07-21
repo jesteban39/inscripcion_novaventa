@@ -13,7 +13,17 @@ const sxBox = {
 
 export function Footer() {
   return (
-    <Grid container p={1}>
+    <Grid
+      container
+      sx={{
+        position: 'absolute',
+        height: 40,
+        bottom: 1,
+        padding: 1,
+        borderRadius: '1rem',
+        backgroundColor: 'white'
+      }}
+    >
       <Grid item xs={6}>
         <Box sx={sxBox}>
           <Image src='/icons/novaventa-grey.svg' alt='novaventa' fill />
