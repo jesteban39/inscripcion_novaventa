@@ -1,4 +1,3 @@
-import {Copyright} from '@/components/Copyright'
 import {Footer} from '@/components/Footer'
 import {NavBar} from '@/components/NavBar'
 import ThemeMiuProvider from '@/providers/ThemeMui'
@@ -19,13 +18,10 @@ export default function RootLayout({children}: Props) {
       <body>
         <ThemeMiuProvider>
           <NavBar />
-          <Paper sx={{position: 'relative', minHeight: '99vh'}}>
-            <Box sx={{height: '100%', pt: '8vh'}}>
-              {children}
-              <Footer />
-            </Box>
+          <Paper sx={{minHeight: '90vh'}}>
+            <Box sx={{height: '100%', paddingTop: '8vh'}}>{children}</Box>
           </Paper>
-          <Copyright />
+          <Footer />
         </ThemeMiuProvider>
       </body>
     </html>

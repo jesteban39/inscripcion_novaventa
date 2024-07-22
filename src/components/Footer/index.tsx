@@ -1,5 +1,7 @@
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
+import Link from '@mui/material/Link'
+import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 
 const sxBox = {
@@ -13,28 +15,43 @@ const sxBox = {
 
 export function Footer() {
   return (
-    <Grid
-      component='footer'
-      container
-      sx={{
-        position: 'absolute',
-        height: 40,
-        bottom: 1,
-        padding: 1,
-        borderRadius: '1rem',
-        backgroundColor: 'white'
-      }}
-    >
-      <Grid item xs={6}>
-        <Box sx={sxBox}>
-          <Image src='/icons/novaventa-grey.svg' alt='novaventa' fill />
-        </Box>
+    <Box component='footer' bgcolor='background.paper'>
+      <Grid
+        container
+        sx={{
+          height: 40,
+          padding: 1,
+          marginBottom: '2px',
+          borderRadius: '1rem',
+          backgroundColor: 'white'
+        }}
+      >
+        <Grid item xs={6}>
+          <Box sx={sxBox}>
+            <Image src='/icons/novaventa-grey.svg' alt='novaventa' fill />
+          </Box>
+        </Grid>
+        <Grid item xs={6}>
+          <Box sx={sxBox}>
+            <Image src='/icons/nutresa-grey.svg' alt='nutresa' fill />
+          </Box>
+        </Grid>
       </Grid>
-      <Grid item xs={6}>
-        <Box sx={sxBox}>
-          <Image src='/icons/nutresa-grey.svg' alt='nutresa' fill />
-        </Box>
-      </Grid>
-    </Grid>
+      <Box
+        component='footer'
+        sx={{
+          padding: 1,
+          height: '6vh',
+          backgroundColor: 'white'
+        }}
+      >
+        <Typography variant='body2' color='text.secondary'>
+          <Link color='inherit' href='https://novaventa.com/'>
+            {' © Novaventa S.A.S '}
+          </Link>
+          {'Todos los derechos reservados'}
+        </Typography>
+      </Box>
+    </Box>
   )
 }
