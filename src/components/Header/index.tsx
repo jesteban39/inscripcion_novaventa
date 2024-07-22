@@ -6,7 +6,6 @@ export function HeaderHome() {
     <Box
       sx={{
         position: 'relative',
-        width: '100vw',
         minHeight: '20vh',
         borderRadius: '0px 0px 1rem 1rem',
         overflow: 'hidden'

@@ -14,6 +14,7 @@ const sxBox = {
 export function Footer() {
   return (
     <Grid
+      component='footer'
       container
       sx={{
         position: 'absolute',

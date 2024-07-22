@@ -51,7 +51,7 @@ export const themeOptions: ThemeOptions = {
       main: 'rgba(244, 54, 76, 1)'
     },
     background: {
-      paper: 'rgba(238,238,238,1)'
+      paper: 'rgba(238, 238, 238, 1)'
     }
   },
   typography: {

@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 export function Copyright() {
   return (
     <Box
+      component='footer'
       sx={{
         p: 1,
         mt: 'auto',

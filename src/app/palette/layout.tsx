@@ -5,6 +5,6 @@ export const metadata: Metadata = {
   description: 'Palette theme MUI'
 }
 
-export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
+export default function PaletteLayout({children}: Readonly<{children: React.ReactNode}>) {
   return <>{children}</>
 }

@@ -1,8 +1,9 @@
 'use client'
 import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-import useTheme from '@mui/material/styles/useTheme'
+import {useTheme} from '@mui/material/styles'
 
 export default function Palette() {
   const {palette} = useTheme()
@@ -16,7 +17,7 @@ export default function Palette() {
   )
 
   return (
-    <main>
+    <Container component='main' sx={{backgroundColor: 'white'}}>
       <Grid container spacing={0} padding={3}>
         <Grid container spacing={0}>
           <Typography variant='h2'>Palette de MUI</Typography>
@@ -36,7 +37,7 @@ export default function Palette() {
             <Grid item xs={12}>
               <Typography variant='h4'>divider</Typography>
             </Grid>
-            <Grid key={'color'} item xs={6} sm={3}>
+            <Grid key={'color'} item xs={6} sm={4} md={3}>
               <Box
                 height='100px'
                 bgcolor={palette.divider}
@@ -53,7 +54,7 @@ export default function Palette() {
                 </Grid>
                 {Object.entries(values).map(([name, color], idx) => {
                   return (
-                    <Grid key={idx} item xs={6} sm={3}>
+                    <Grid key={idx} item xs={6} sm={4} md={3}>
                       <Typography variant='h6'>{name}</Typography>
                       <Box
                         height='100px'
@@ -69,6 +70,6 @@ export default function Palette() {
           })}
         </Grid>
       </Grid>
-    </main>
+    </Container>
   )
 }
