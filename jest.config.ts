@@ -1,8 +1,8 @@
-import type {Config} from 'jest';
-import nextJest from 'next/jest';
+import type {Config} from 'jest'
+import nextJest from 'next/jest'
 
-const createJestConfig = nextJest({dir: './'});
-const coverage = 90;
+const createJestConfig = nextJest({dir: './'})
+const coverage = 90
 
 const config: Config = {
   roots: ['<rootDir>/src'],
@@ -19,6 +19,6 @@ const config: Config = {
       functions: coverage
     }
   }
-};
+}
 
-export default createJestConfig(config);
+export default createJestConfig(config)

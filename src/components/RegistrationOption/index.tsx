@@ -13,9 +13,9 @@ type Props = {
   onClick: MouseEventHandler
 }
 
-export function RegistrationOption({title, text, Icon}: Props) {
+export function RegistrationOption({Icon, onClick, title, text}: Props) {
   return (
-    <Box sx={styleBox}>
+    <Box sx={styleBox} onClick={onClick} data-testid='RegistrationOption'>
       <Grid container>
         <Grid item xs>
           <IconButton sx={sxIconButton}>

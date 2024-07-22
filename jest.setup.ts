@@ -1,3 +1,4 @@
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom'
 //import '@tests/mocks'
-global.console.error = jest.fn();
+jest.mock('@media/icons/*.svg', () => 'svg-component')
+global.console.error = jest.fn()
