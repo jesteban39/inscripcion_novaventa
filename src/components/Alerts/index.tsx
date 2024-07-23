@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-import type {MouseEventHandler} from 'react'
+import type {MouseEventHandler, ElementType} from 'react'
 import {Slide, toast} from 'react-toastify'
 
 /**
@@ -12,7 +12,10 @@ import {Slide, toast} from 'react-toastify'
  * @param {Object} props Props to pass to Element
  * @returns {MouseEventHandler} Function that renders the Element
  */
-export const getAlertModal = (Element: any, props: {[p: string]: any}): (() => void) => {
+export const getAlertModal = (
+  Element: ElementType,
+  props: {[p: string]: any}
+): (() => void) => {
   return () => {
     return toast(
       ({closeToast}) => (
@@ -26,7 +29,7 @@ export const getAlertModal = (Element: any, props: {[p: string]: any}): (() => v
             bgcolor: 'action.selected',
             py: 3,
             px: 1,
-            zIndex: 10
+            zIndex: 20
           }}
         >
           <Element {...props} close={closeToast} />

@@ -5,6 +5,8 @@ import IconPhone from '@media/icons/phone.svg'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import {useState} from 'react'
+//import {getAlertModal} from '@/components/Alerts'
+import {showToast} from '@/components/Alerts/toastify'
 
 export const RegistrationOptions = () => {
   const [showAction, setShowAction] = useState(false)
@@ -38,12 +40,18 @@ export const RegistrationOptions = () => {
           {showAction && (
             <Grid container mt={1} spacing={1}>
               <Grid item xs={6}>
-                <Button data-testid='action1' onClick={(e) => e.stopPropagation()}>
+                <Button data-testid='action1' onClick={() => {}}>
                   {'Te llamamos'}
                 </Button>
               </Grid>
               <Grid item xs={6}>
-                <Button data-testid='action2' onClick={(e) => e.stopPropagation()}>
+                <Button
+                  data-testid='action2'
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    showToast('title')
+                  }}
+                >
                   {'Llámanos'}
                 </Button>
               </Grid>
