@@ -38,10 +38,14 @@ export const RegistrationOptions = () => {
           {showAction && (
             <Grid container mt={1} spacing={1}>
               <Grid item xs={6}>
-                <Button onClick={(e) => e.stopPropagation()}>{'Te llamamos'}</Button>
+                <Button data-testid='action1' onClick={(e) => e.stopPropagation()}>
+                  {'Te llamamos'}
+                </Button>
               </Grid>
               <Grid item xs={6}>
-                <Button onClick={(e) => e.stopPropagation()}>{'Llámanos'}</Button>
+                <Button data-testid='action2' onClick={(e) => e.stopPropagation()}>
+                  {'Llámanos'}
+                </Button>
               </Grid>
             </Grid>
           )}
