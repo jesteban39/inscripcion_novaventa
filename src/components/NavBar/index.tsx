@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export function NavBar() {
   return (
-    <AppBar data-testid='navBar' sx={{minHeight: '9vh', paddingX: 3}}>
+    <AppBar data-testid='navBar' sx={{minHeight: '9vh', paddingX: 2}}>
       <Toolbar>
         <Image src='/icons/novaventa-white.svg' alt='novaventa' fill />
       </Toolbar>

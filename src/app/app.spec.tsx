@@ -14,10 +14,12 @@ describe('HomeApp', () => {
       </Layout>
     )
     expect(screen.getByTestId('navBar')).toBeInTheDocument()
-    const RegistrationOption = screen.getAllByTestId('RegistrationOption')
-    expect(RegistrationOption.length).toBe(2)
-    fireEvent.click(RegistrationOption[0])
-    fireEvent.click(RegistrationOption[1])
+    const option1 = screen.getByTestId('option1')
+    expect(option1).toBeInTheDocument()
+    fireEvent.click(option1)
+    const option2 = screen.getByTestId('option2')
+    expect(option2).toBeInTheDocument()
+    fireEvent.click(option2)
     await waitFor(() => {
       const RegistrationOption = screen.getAllByTestId('RegistrationOption')
       expect(RegistrationOption.length).toBe(2)

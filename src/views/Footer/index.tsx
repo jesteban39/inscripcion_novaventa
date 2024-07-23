@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
+import Link from 'next/link'
 import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 
@@ -45,10 +45,8 @@ export function Footer() {
           backgroundColor: 'white'
         }}
       >
-        <Typography variant='body2' color='text.secondary'>
-          <Link color='inherit' href='https://novaventa.com/'>
-            {' © Novaventa S.A.S '}
-          </Link>
+        <Typography variant='body2' align='center' color='text.secondary'>
+          <Link href='https://novaventa.com/'>{' © Novaventa S.A.S '}</Link>
           {'Todos los derechos reservados'}
         </Typography>
       </Box>

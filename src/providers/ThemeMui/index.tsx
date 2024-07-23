@@ -4,16 +4,18 @@ import {themeOptions} from '@/providers/ThemeMui/themeOptions'
 import CssBaseline from '@mui/material/CssBaseline'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import React from 'react'
+import {ToastContainer} from 'react-toastify'
 
-const theme = createTheme(themeOptions)
+export const theme = createTheme(themeOptions)
 
-export default function ThemeMiuProvider({
-  children
-}: Readonly<{children: React.ReactNode}>) {
+type Props = Readonly<{children: React.ReactNode}>
+
+export default function ThemeMiuProvider({children}: Props) {
   return (
     <NextAppDirEmotionCacheProvider options={{key: 'mui'}}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <ToastContainer style={{height: '0px'}} />
         {children}
       </ThemeProvider>
     </NextAppDirEmotionCacheProvider>

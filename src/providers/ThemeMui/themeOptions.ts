@@ -116,14 +116,16 @@ export const themeOptions: ThemeOptions = {
     },
     MuiButton: {
       defaultProps: {
-        variant: 'contained'
+        variant: 'contained',
+        fullWidth: true
       },
-      // styleOverrides: {
-      //   root: () => ({
-      //     textTransform: 'none',
-      //     borderRadius: '1.3rem'
-      //   })
-      // },
+      styleOverrides: {
+        root: () => ({
+          textTransform: 'none',
+          borderRadius: '2em',
+          padding: 3
+        })
+      },
       variants: [
         // {
         //   props: {variant: 'file'},

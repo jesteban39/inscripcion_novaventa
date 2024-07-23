@@ -1,4 +1,4 @@
-import {HeaderHome} from '@/components/Header'
+import {HeaderHome} from '@/views/Header'
 import {RegistrationOptions} from '@/components/RegistrationOptions'
 import Container from '@mui/material/Container'
 

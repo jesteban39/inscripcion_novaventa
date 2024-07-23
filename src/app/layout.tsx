@@ -1,4 +1,4 @@
-import {Footer} from '@/components/Footer'
+import {Footer} from '@/views/Footer'
 import {NavBar} from '@/components/NavBar'
 import ThemeMiuProvider from '@/providers/ThemeMui'
 import Box from '@mui/material/Box'

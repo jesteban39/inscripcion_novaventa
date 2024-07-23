@@ -15,6 +15,7 @@ export function HeaderHome() {
         src='/images/header-home.png'
         alt='novaventa'
         style={{objectFit: 'cover'}}
+        priority
         fill
       />
     </Box>
