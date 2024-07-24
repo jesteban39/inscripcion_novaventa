@@ -17,7 +17,11 @@ const styleBox: SxProps<Theme> = {
     top: 0
   },
   '& .Toastify__toast': {
+    padding: 0,
     borderRadius: 3
+  },
+  '& .Toastify__toast-body': {
+    padding: 0
   }
 }
 

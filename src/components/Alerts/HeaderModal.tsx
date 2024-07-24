@@ -13,7 +13,7 @@ type PropsHeaderModal = {
 }
 
 export const HeaderModal = ({onClose, Icon, title}: PropsHeaderModal) => (
-  <Grid container sx={{display: 'flex', justifyContent: 'space-between'}}>
+  <Grid container sx={{display: 'flex', padding: 1.5, justifyContent: 'space-between'}}>
     <Grid item xs={'auto'}>
       <SvgIcon color='primary'>{Icon}</SvgIcon>
     </Grid>
@@ -24,7 +24,7 @@ export const HeaderModal = ({onClose, Icon, title}: PropsHeaderModal) => (
     </Grid>
     <Grid item xs={'auto'}>
       <IconButton sx={{padding: 0}} onClick={onClose}>
-        <SvgIcon sx={{fontSize: 26}} color='primary'>
+        <SvgIcon sx={{fontSize: 28}} color='primary'>
           <IconClose />
         </SvgIcon>
       </IconButton>

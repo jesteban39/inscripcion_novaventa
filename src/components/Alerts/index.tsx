@@ -42,11 +42,9 @@ export const showToast = (
     ({closeToast}) => (
       <>
         <HeaderModal onClose={closeToast} Icon={Icon} title={title} />
-        <Grid xs={12}>
-          <Paper>
-            <Content {...contentProps} close={closeToast} />
-          </Paper>
-        </Grid>
+        <Paper sx={{padding: 2}}>
+          <Content {...contentProps} close={closeToast} />
+        </Paper>
       </>
     ),
     {...defaultToastOptions, ...options}
