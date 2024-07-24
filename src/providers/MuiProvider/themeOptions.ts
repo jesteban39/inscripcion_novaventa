@@ -68,16 +68,16 @@ export const themeOptions: ThemeOptions = {
       //   })
       // },
       variants: [
-        // {
-        //   props: {variant: 'title1'},
-        //   style: ({theme: {palette}}) => ({
-        //     color: palette.primary.main,
-        //     fontFamily: '"darkmode-on", sans-serif',
-        //     fontSize: 26,
-        //     fontWeight: 400,
-        //     fontStyle: 'normal'
-        //   })
-        // },
+        {
+          props: {variant: 'title1'},
+          style: ({theme: {palette}}) => ({
+            color: palette.primary.dark,
+            fontFamily: '"darkmode-on", sans-serif',
+            fontSize: 19,
+            fontWeight: 700,
+            fontStyle: 'normal'
+          })
+        },
         {
           props: {variant: 'alert1'},
           style: {

@@ -1,15 +1,33 @@
 'use client'
+import {showToast} from '@/components/Alerts'
 import {RegistrationItem} from '@/components/RegistrationOptions/RegistrationItem'
 import IconDesktop from '@media/icons/desktop.svg'
 import IconPhone from '@media/icons/phone.svg'
-import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import {useState} from 'react'
-//import {getAlertModal} from '@/components/Alerts'
-import {showToast} from '@/components/Alerts/toastify'
+import Grid from '@mui/material/Grid'
+import {MouseEventHandler, useState} from 'react'
+
+const CallUs = () => <>content call us</>
+const WeCallYou = () => <>content We Call You</>
+
+const alertCallUs: MouseEventHandler = (e) => {
+  e.stopPropagation()
+  showToast(CallUs, {
+    Icon: <IconPhone />,
+    title: 'Llámanos'
+  })
+}
+const alertWeCallYou: MouseEventHandler = (e) => {
+  e.stopPropagation()
+  showToast(WeCallYou, {
+    Icon: <IconPhone />,
+    title: 'Llámanos'
+  })
+}
 
 export const RegistrationOptions = () => {
   const [showAction, setShowAction] = useState(false)
+
   return (
     <Grid container spacing={3} padding={2}>
       <Grid item xs={12}>
@@ -19,7 +37,7 @@ export const RegistrationOptions = () => {
           onClick={() => {
             setShowAction(false)
           }}
-          title='En linea'
+          title='En línea'
           text='Registrate facilmete a través de un formulario en linea.'
         />
       </Grid>
@@ -40,18 +58,12 @@ export const RegistrationOptions = () => {
           {showAction && (
             <Grid container mt={1} spacing={1}>
               <Grid item xs={6}>
-                <Button data-testid='action1' onClick={() => {}}>
+                <Button data-testid='action1' onClick={alertWeCallYou}>
                   {'Te llamamos'}
                 </Button>
               </Grid>
               <Grid item xs={6}>
-                <Button
-                  data-testid='action2'
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    showToast('title')
-                  }}
-                >
+                <Button data-testid='action2' onClick={alertCallUs}>
                   {'Llámanos'}
                 </Button>
               </Grid>

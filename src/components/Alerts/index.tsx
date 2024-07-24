@@ -1,112 +1,54 @@
-'use client'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
-import type {MouseEventHandler, ElementType} from 'react'
+import type {ElementType, ReactElement} from 'react'
+import type {Id, ToastOptions} from 'react-toastify'
 import {Slide, toast} from 'react-toastify'
+import {HeaderModal} from './HeaderModal'
+import {Paper} from '@mui/material'
+import Grid from '@mui/material/Grid'
 
-/**
- * Wraps a component inside a modal with the MUI theme
- * @param {Component} Element Component to render
- * @param {Object} props Props to pass to Element
- * @returns {MouseEventHandler} Function that renders the Element
- */
-export const getAlertModal = (
-  Element: ElementType,
-  props: {[p: string]: any}
-): (() => void) => {
-  return () => {
-    return toast(
-      ({closeToast}) => (
-        <Box
-          sx={{
-            position: 'fixed',
-            display: 'flex',
-            justifyContent: 'center',
-            width: '100%',
-            height: '100%',
-            bgcolor: 'action.selected',
-            py: 3,
-            px: 1,
-            zIndex: 20
-          }}
-        >
-          <Element {...props} close={closeToast} />
-        </Box>
-      ),
-      {transition: Slide}
-    )
-  }
+export const defaultToastOptions: ToastOptions = {
+  position: 'top-center',
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: false,
+  closeButton: false,
+  pauseOnHover: false,
+  progress: undefined,
+  theme: 'light',
+  transition: Slide
 }
 
-export interface AlertErrorProps {
+type ToastType = 'success' | 'error' | 'info' | 'warning' | 'default'
+
+type headerProps = Partial<any> & {
+  Icon: ReactElement
   title: string
-  text: string
-  close: MouseEventHandler
 }
 
-export const AlertError = ({title, text, close}: AlertErrorProps) => {
-  return (
-    <Box
-      sx={{
-        position: 'absolute',
-        width: '50vh',
-        transform: 'translate(100%, 20%)',
-        bgcolor: 'background.paper',
-        boxShadow: 24,
-        borderRadius: 6,
-        zIndex: 10
-      }}
-    >
-      <Grid container direction='column' padding={2} alignItems='center'>
-        <Grid item>
-          <></>
+/**
+ * Display toast
+ *
+ * @param {ElementType} Content
+ * @param {headerProps} contentProps
+ * @param {ToastOptions} options
+ * @return {Id}
+ */
+export const showToast = (
+  Content: ElementType,
+  contentProps: headerProps,
+  options: Partial<ToastOptions> = {}
+): Id => {
+  const {Icon, title} = contentProps
+  return toast(
+    ({closeToast}) => (
+      <>
+        <HeaderModal onClose={closeToast} Icon={Icon} title={title} />
+        <Grid xs={12}>
+          <Paper>
+            <Content {...contentProps} close={closeToast} />
+          </Paper>
         </Grid>
-        <Grid item>
-          <Typography variant='alert1' color='primary'>
-            {title}
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography variant='alert2' color='secondary'>
-            {text}
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Button onClick={close}>{'OK'}</Button>
-        </Grid>
-      </Grid>
-    </Box>
+      </>
+    ),
+    {...defaultToastOptions, ...options}
   )
-}
-
-/**
- * Render an error alert
- * @param {string} title Title of the alert
- * @param {string} text Text to display in the alert
- * @returns {Function} Function that when executed renders the alert
- */
-export const getAlertError = (title: string, text: string): (() => void) => {
-  return getAlertModal(AlertError, {title, text})
-}
-
-/**
- * Render an error alert
- * @param {string} title Title of the alert
- * @param {string} text Text to display in the alert
- * @returns {Function} Function that when executed renders the alert
- */
-export const getAlertError1 = (title: string): MouseEventHandler => {
-  return () => toast.error(title)
-}
-
-/**
- * Render an error alert
- * @param {string} title Title of the alert
- * @param {string} text Text to display in the alert
- * @returns {void}
- */
-export const alertError = (title: string, text: string): void => {
-  getAlertModal(AlertError, {title, text})()
 }
