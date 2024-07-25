@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import React from 'react'
 
-export const theme = createTheme(themeOptions)
+const theme = createTheme(themeOptions)
 
 type Props = Readonly<{children: React.ReactNode}>
 

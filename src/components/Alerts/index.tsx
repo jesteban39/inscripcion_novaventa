@@ -4,13 +4,13 @@ import type {Id, ToastOptions} from 'react-toastify'
 import {Slide, toast} from 'react-toastify'
 import {HeaderModal} from './HeaderModal'
 
-export const defaultToastOptions: ToastOptions = {
+const defaultToastOptions: ToastOptions = {
   position: 'top-center',
-  autoClose: 5000,
+  autoClose: 3000,
   hideProgressBar: false,
   closeOnClick: false,
   closeButton: false,
-  pauseOnHover: false,
+  pauseOnHover: true,
   progress: undefined,
   theme: 'light',
   transition: Slide
@@ -28,7 +28,7 @@ type headerProps = Partial<any> & {
  *
  * @param {ElementType} Content
  * @param {headerProps} contentProps
- * @param {ToastOptions} options
+ * @param {Partial<ToastOptions>} options
  * @return {Id}
  */
 export const showToast = (
@@ -41,7 +41,7 @@ export const showToast = (
     ({closeToast}) => (
       <>
         <HeaderModal onClose={closeToast} Icon={Icon} title={title} />
-        <Paper sx={{padding: 2}}>
+        <Paper sx={{marginBottom: '5px'}}>
           <Content {...contentProps} close={closeToast} />
         </Paper>
       </>

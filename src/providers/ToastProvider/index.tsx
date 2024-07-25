@@ -1,42 +1,18 @@
 'use client'
-import type {SxProps, Theme} from '@mui/material'
 import Box from '@mui/material/Box'
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import {styleContainer} from './style'
 
-/**
- * disable toastify responsive
- */
-const styleBox: SxProps<Theme> = {
-  '& .Toastify__toast-container': {
-    backgroundColor: 'rgba(15, 97, 112, 0.5)',
-    width: '100vw',
-    minHeight: '100vh',
-    paddingX: 2,
-    paddingTop: '9vh',
-    top: 0
-  },
-  '& .Toastify__toast': {
-    padding: 0,
-    borderRadius: 3
-  },
-  '& .Toastify__toast-body': {
-    padding: 0
-  }
-}
-
-interface ToastProviderProps {
+type ToastProviderProps = Readonly<{
   children: React.ReactNode
-}
+}>
 
 export default function ToastProvider({children}: ToastProviderProps) {
   return (
-    <Box sx={styleBox}>
+    <Box sx={styleContainer}>
       {children}
-      <ToastContainer
-      //toastClassName='bg-blue-600 relative flex justify-center overflow-hidden'
-      //bodyClassName='text-sm font-white font-med block'
-      />
+      <ToastContainer />
     </Box>
   )
 }
