@@ -6,8 +6,8 @@ import IconPhone from '@media/icons/phone.svg'
 import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import {MouseEventHandler, useState} from 'react'
+import {CallUs} from '@/components/Modals/CallUs'
 
-const CallUs = () => <>content call us</>
 const WeCallYou = () => <>content We Call You</>
 
 const alertCallUs: MouseEventHandler = (e) => {

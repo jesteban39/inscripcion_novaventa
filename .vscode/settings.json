@@ -33,5 +33,9 @@
         "!jsonl",
         "!yaml",
         "!yml"
-    ]
+    ],
+    "sonarlint.connectedMode.project": {
+        "connectionId": "gruponutresa",
+        "projectKey": "novaventa.3758-imp-react-js"
+    }
 }
