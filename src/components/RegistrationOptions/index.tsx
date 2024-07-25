@@ -30,7 +30,7 @@ export const RegistrationOptions = () => {
 
   return (
     <Grid container spacing={3} padding={2}>
-      <Grid item xs={12}>
+      <Grid item xs={12} md={6}>
         <RegistrationItem
           testid='option1'
           Icon={<IconDesktop />}
@@ -41,7 +41,7 @@ export const RegistrationOptions = () => {
           text='Registrate facilmete a través de un formulario en linea.'
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} md={6}>
         <RegistrationItem
           testid='option2'
           Icon={<IconPhone />}

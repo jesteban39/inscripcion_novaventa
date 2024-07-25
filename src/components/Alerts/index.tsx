@@ -1,9 +1,8 @@
+import {Paper} from '@mui/material'
 import type {ElementType, ReactElement} from 'react'
 import type {Id, ToastOptions} from 'react-toastify'
 import {Slide, toast} from 'react-toastify'
 import {HeaderModal} from './HeaderModal'
-import {Paper} from '@mui/material'
-import Grid from '@mui/material/Grid'
 
 export const defaultToastOptions: ToastOptions = {
   position: 'top-center',

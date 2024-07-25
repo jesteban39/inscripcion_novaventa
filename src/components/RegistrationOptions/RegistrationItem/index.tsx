@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid'
 import SvgIcon from '@mui/material/SvgIcon'
 import Typography from '@mui/material/Typography'
 import type {MouseEventHandler, ReactElement, ReactNode} from 'react'
-import {useStyle} from './useStyle'
+import {containerStyle} from './style'
 
 type Props = Readonly<{
   Icon: ReactElement
@@ -16,7 +16,6 @@ type Props = Readonly<{
 }>
 
 export function RegistrationItem({Icon, onClick, title, text, children, testid}: Props) {
-  const {containerStyle} = useStyle()
   return (
     <Box sx={containerStyle} onClick={onClick} data-testid={testid}>
       <Grid container>

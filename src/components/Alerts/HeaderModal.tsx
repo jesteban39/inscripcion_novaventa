@@ -6,13 +6,18 @@ import SvgIcon from '@mui/material/SvgIcon'
 import Typography from '@mui/material/Typography'
 import type {MouseEventHandler, ReactElement} from 'react'
 
-type PropsHeaderModal = {
+type HeaderModalProps = {
   onClose: MouseEventHandler
   Icon: ReactElement
   title: string
 }
 
-export const HeaderModal = ({onClose, Icon, title}: PropsHeaderModal) => (
+/**
+ *
+ * @param {HeaderModalProps} contentProps
+ * @returns
+ */
+export const HeaderModal = ({onClose, Icon, title}: HeaderModalProps) => (
   <Grid container sx={{display: 'flex', padding: 1.5, justifyContent: 'space-between'}}>
     <Grid item xs={'auto'}>
       <SvgIcon color='primary'>{Icon}</SvgIcon>
