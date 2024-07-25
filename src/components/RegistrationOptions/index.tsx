@@ -1,6 +1,6 @@
 'use client'
-import {showToast} from '@/components/Alerts'
 import {RegistrationItem} from '@/components/RegistrationOptions/RegistrationItem'
+import {showModal} from '@/providers/ToastProvider'
 import IconDesktop from '@media/icons/desktop.svg'
 import IconPhone from '@media/icons/phone.svg'
 import Button from '@mui/material/Button'
@@ -12,14 +12,14 @@ const WeCallYou = () => <>content We Call You</>
 
 const alertCallUs: MouseEventHandler = (e) => {
   e.stopPropagation()
-  showToast(CallUs, {
+  showModal(CallUs, {
     Icon: <IconPhone />,
     title: 'Llámanos'
   })
 }
 const alertWeCallYou: MouseEventHandler = (e) => {
   e.stopPropagation()
-  showToast(WeCallYou, {
+  showModal(WeCallYou, {
     Icon: <IconPhone />,
     title: 'Llámanos'
   })

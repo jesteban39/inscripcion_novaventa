@@ -1,5 +1,5 @@
-import {HeaderHome} from '@/views/Header'
 import {RegistrationOptions} from '@/components/RegistrationOptions'
+import {HeaderHome} from '@/views/Header'
 import Container from '@mui/material/Container'
 
 export default function PageHome() {

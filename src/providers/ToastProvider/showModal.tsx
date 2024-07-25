@@ -24,14 +24,14 @@ type headerProps = Partial<any> & {
 }
 
 /**
- * Display toast
+ * Display toast modal
  *
  * @param {ElementType} Content
  * @param {headerProps} contentProps
  * @param {Partial<ToastOptions>} options
  * @return {Id}
  */
-export const showToast = (
+export const showModal = (
   Content: ElementType,
   contentProps: headerProps,
   options: Partial<ToastOptions> = {}
