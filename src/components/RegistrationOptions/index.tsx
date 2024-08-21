@@ -38,6 +38,7 @@ export const RegistrationOptions = () => {
           Icon={<IconDesktop />}
           onClick={() => {
             setShowAction(false)
+            router.push('/digital')
           }}
           title='En línea'
           text='Registrate facilmete a través de un formulario en linea.'
