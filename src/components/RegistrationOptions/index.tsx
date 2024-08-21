@@ -7,6 +7,7 @@ import Button from '@mui/material/Button'
 import Grid from '@mui/material/Grid'
 import {MouseEventHandler, useState} from 'react'
 import {CallUs} from '@/components/Modals/CallUs'
+import {useRouter} from 'next/navigation'
 
 const WeCallYou = () => <>content We Call You</>
 
@@ -27,6 +28,7 @@ const alertWeCallYou: MouseEventHandler = (e) => {
 
 export const RegistrationOptions = () => {
   const [showAction, setShowAction] = useState(false)
+  const router = useRouter()
 
   return (
     <Grid container spacing={3} padding={2}>
@@ -70,6 +72,9 @@ export const RegistrationOptions = () => {
             </Grid>
           )}
         </RegistrationItem>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Button onClick={() => router.push('/camera')}>{'Camara'}</Button>
       </Grid>
     </Grid>
   )
