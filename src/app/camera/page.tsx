@@ -1,6 +1,7 @@
 'use client'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
 import {useRouter} from 'next/navigation'
 import {useRef, useState} from 'react'
 import Webcam from 'react-webcam'
@@ -12,35 +13,40 @@ export default function Camera() {
   const router = useRouter()
 
   return (
-    <Box>
-      <Box>
+    <Grid container spacing={1}>
+      <Grid item xs={12}>
         <Webcam
           ref={webcamRef}
           audio={false}
-          width='90%'
+          width='100%'
           height={360}
           screenshotFormat='image/jpeg'
-        />
-        <Button>
-          <Box
-            onClick={() => {
-              const imageSrc = webcamRef.current.getScreenshot()
-              setImageSrc(imageSrc)
-            }}
-          >
-            Capture photo
-          </Box>
-        </Button>
-        <Button
-          onClick={() => {
-            setFacingMode(facingMode === 'user' ? 'environment' : 'user')
+          videoConstraints={{
+            width: 1280,
+            height: 720,
+            facingMode
           }}
-        >
-          Change Camera
+        />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <Button onClick={() => setImageSrc(webcamRef.current.getScreenshot())}>
+          {'Capture photo'}
         </Button>
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <Button
+          onClick={() => setFacingMode((s) => (s === 'user' ? 'environment' : 'user'))}
+        >
+          {'Change Camera'}
+        </Button>
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        {' '}
         <Button onClick={() => router.push('/')}>{'Home'}</Button>
-      </Box>
-      {imageSrc && <img src={imageSrc} alt='captured' />}
-    </Box>
+      </Grid>
+      <Grid item xs={12}>
+        {imageSrc && <img src={imageSrc} alt='captured' />}
+      </Grid>
+    </Grid>
   )
 }
