@@ -15,6 +15,7 @@
     "@mui/material": "^5.16.4",
     "next": "14.2.5",
     "next-plugin-svgr": "^1.1.10",
+    "peerjs": "^1.5.4",
     "react": "^18",
     "react-dom": "^18",
     "react-toastify": "^10.0.5",

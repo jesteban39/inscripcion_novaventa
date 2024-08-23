@@ -161,12 +161,12 @@ export const themeOptions: ThemeOptions = {
     MuiInputLabel: {
       defaultProps: {
         shrink: true
+      },
+      styleOverrides: {
+        root: ({theme: {palette}}) => ({
+          color: palette.text.primary
+        })
       }
-      // styleOverrides: {
-      //   root: ({theme: {palette}}) => ({
-      //     color: palette.text.primary
-      //   })
-      // }
     },
     MuiInput: {
       defaultProps: {
@@ -175,18 +175,18 @@ export const themeOptions: ThemeOptions = {
       }
     },
     MuiInputBase: {
-      // styleOverrides: {
-      //   root: ({theme: {palette}}) => ({
-      //     color: palette.text.secondary,
-      //     border: `solid 1px ${palette.action.disabled}`,
-      //     borderRadius: '1.3rem',
-      //     backgroundColor: palette.common.white,
-      //     minHeight: '2.3rem',
-      //     padding: '0 0.2rem',
-      //     overflowX: 'hidden',
-      //     overflowY: 'auto'
-      //   })
-      // }
+      styleOverrides: {
+        root: ({theme: {palette}}) => ({
+          color: palette.text.secondary,
+          border: `solid 1px ${palette.action.disabled}`,
+          borderRadius: '1.3rem',
+          backgroundColor: palette.common.white,
+          minHeight: '2.3rem',
+          padding: '0 0.2rem',
+          overflowX: 'hidden',
+          overflowY: 'auto'
+        })
+      }
     }
   }
 }

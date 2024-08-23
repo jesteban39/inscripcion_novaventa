@@ -75,7 +75,10 @@ export const RegistrationOptions = () => {
         </RegistrationItem>
       </Grid>
       <Grid item xs={12} md={6}>
-        <Button onClick={() => router.push('/camera')}>{'Camara'}</Button>
+        <Button onClick={() => router.push('/camera')}>{'Camera'}</Button>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Button onClick={() => router.push('/alertaxity')}>{'AlertAxity'}</Button>
       </Grid>
     </Grid>
   )
