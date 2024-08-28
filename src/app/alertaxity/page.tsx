@@ -23,6 +23,16 @@ const readers = [
     peerId: 'EXNOJEQUINTE',
     name: 'Esteban Quintero',
     status: 'offline'
+  },
+  {
+    peerId: 'EXSSYPALOMIN',
+    name: 'Yurany',
+    status: 'offline'
+  },
+  {
+    peerId: 'EXSSWARODRIR',
+    name: 'wil',
+    status: 'offline'
   }
 ]
 
